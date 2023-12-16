@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Open Space</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="space">
+        <!-- Planet, rocket, the introduction text and the refresh button -->
+        <div class="planet-area">
+            <div class="introductionDiv">
+                <b>
+                    <p id="introductionText">Welcome aboard! Click <span class="passwordSpan"
+                            id="passwordLink">here</span> for password</p>
+                </b>
+            </div>
+            <button id="refreshBtn" onclick="uncheckInputs()">TRY AGAIN</button>
+            <img class="planet" src="images/mars.png">
+            <img class="rocket" src="images/rocket.png">
+        </div>
+
+        <!-- The control panel -->
+        <div class="control-panel">
+            <div class="control-panel__inner">
+                <input type="password" placeholder=" Enter password to unlock" id="password" />
+                <input type="button" value="OK" id="okBtn" onclick="checkPassword()" />
+
+                <!-- The speed options -->
+                <h3 class="explanationText">Set the speed of the rocket</h3>
+
+                <div class="options">
+                    <label class="speed-container"> Slow
+                        <input type="radio" name="speed" class="rocketSpeed" id="slow" disabled />
+                        <span class="speedCheckmark"></span>
+                    </label>
+
+                    <label class="speed-container"> Normal
+                        <input type="radio" name="speed" class="rocketSpeed" id="normal" disabled />
+                        <span class="speedCheckmark"></span>
+                    </label>
+
+                    <label class="speed-container"> Fast
+                        <input type="radio" name="speed" class="rocketSpeed" id="fast" disabled />
+                        <span class="speedCheckmark"></span>
+                    </label>
+                </div>
+
+                <!-- The direction options -->
+                <h3 class="explanationText">Select the destination</h3>
+
+                <div class="options">
+                    <label class="trajectory-container"> West
+                        <input type="radio" name="trajectory" class="rocketTrajectory" id="left" disabled />
+                        <span class="trajectoryCheckmark"></span>
+                    </label>
+
+                    <label class="trajectory-container"> North
+                        <input type="radio" name="trajectory" class="rocketTrajectory" id="forward" disabled />
+                        <span class="trajectoryCheckmark"></span>
+                    </label>
+
+                    <label class="trajectory-container"> East
+                        <input type="radio" name="trajectory" class="rocketTrajectory" id="right" disabled />
+                        <span class="trajectoryCheckmark"></span>
+                    </label>
+                </div>
+
+                <!-- Launch button -->
+                <input type="button" value="LAUNCH" id="launchBtn" disabled />
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

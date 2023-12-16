@@ -1,0 +1,607 @@
+html {
+    overflow: hidden;
+}
+
+body {
+    background-color: black;
+}
+
+.space {
+    background-image: url("images/space.png");
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: end;
+    position: relative;
+}
+
+.planet-area {
+    position: relative;
+    margin-bottom: -0.5vw;
+}
+
+.planet {
+    height: 35vw;
+    margin-left: -0.10vw;
+    position: relative;
+    z-index: 2;
+}
+
+.rocket {
+    height: 13vw;
+    bottom: 18vw;
+    left: 17vw;
+    z-index: 1;
+    position: absolute;
+    transform: rotate(2deg);
+}
+
+.passwordSpan {
+    color: #32CD32;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.passwordSpan:hover {
+    color: #5ee85e;
+}
+
+.control-panel {
+    background-image: linear-gradient(to right, #C0C0C0, white);
+    border-radius: 1vw;
+    margin-right: 5vw;
+    margin-bottom: 4.5vw;
+}
+
+.control-panel__inner {
+    border-radius: 1.5vw;
+    background-color: #242323;
+    height: 34vw;
+    width: 34vw;
+    margin: 1.5vw 1.5vw 1.5vw 1.5vw
+}
+
+.options {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2vw;
+}
+
+.explanationText {
+    text-align: center;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.25vw;
+    margin-top: 3vw;
+}
+
+.speed-container {
+    display: block;
+    position: relative;
+    padding-left: 3vw;
+    cursor: pointer;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2vw;
+}
+
+.speed-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.speedCheckmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.5vw;
+    width: 1.5vw;
+    background-color: #bae3b4;
+    border-style: outset;
+    border-color: black;
+    border-radius: 50%;
+}
+
+.speed-container input:checked+.speedCheckmark {
+    background-color: #32CD32;
+    border-style: inset;
+    border-color: black;
+}
+
+.speed-container input:disabled+.speedCheckmark {
+    background-color: #A9A9A9;
+}
+
+.trajectory-container {
+    display: block;
+    position: relative;
+    padding-left: 3vw;
+    cursor: pointer;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2vw;
+}
+
+.trajectory-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.trajectoryCheckmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.25vw;
+    width: 1.25vw;
+    background-color: #acc7e6;
+    border-style: outset;
+    border-color: black;
+}
+
+.trajectory-container input:checked+.trajectoryCheckmark {
+    background-color: #007FFF;
+    border-style: inset;
+    border-color: black;
+}
+
+.trajectory-container input:disabled+.trajectoryCheckmark {
+    background-color: #A9A9A9;
+}
+
+#introductionText {
+    margin-left: 5vw;
+    color: #FF5F1F;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5vw;
+    background-color: hsl(0, 1%, 14%, 1);
+    width: 30vw;
+    height: 2vw;
+    text-align: center;
+}
+
+#refreshBtn {
+    margin-left: 15vw;
+    background-color: #FF5F1F;
+    border-color: #FF5F1F;
+    border-radius: 0.25vw;
+    width: 10vw;
+    height: 3vw;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.25vw;
+    color: white;
+    visibility: hidden
+}
+
+#refreshBtn:hover {
+    background-color: #FF7F50;
+    border-color: #FF7F50;
+    cursor: pointer;
+}
+
+#password {
+    margin-left: 6.5vw;
+    margin-top: 2vw;
+    height: 2vw;
+    width: 16vw;
+    color: black;
+    border-radius: 0.5vw;
+    border-color: #F4BB44;
+    border-style: inset;
+    background-color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.25vw;
+}
+
+#password:disabled {
+    background-color: #A9A9A9;
+    border-color: #A9A9A9;
+}
+
+#okBtn {
+    margin-left: 1vw;
+    height: 2.35vw;
+    width: 3.5vw;
+    color: black;
+    border-radius: 0.5vw;
+    border-color: #F4BB44;
+    background-color: #F4BB44;
+    border-style: outset;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.25vw;
+    cursor: pointer;
+}
+
+#okBtn:disabled,
+#okBtn:disabled:hover {
+    background-color: #A9A9A9;
+    border-color: #A9A9A9;
+    cursor: context-menu;
+}
+
+#okBtn:hover {
+    background-color: #f9d533;
+}
+
+#launchBtn {
+    margin-top: 3.5vw;
+    margin-left: 13.5vw;
+    border-radius: 50%;
+    height: 7.5vw;
+    width: 7.5vw;
+    background-color: #D2042D;
+    border-color: #D2042D;
+    border-style: outset;
+    color: white;
+    font-family: 'Raleway', sans-serif bold;
+    font-size: 1.5vw;
+    cursor: pointer;
+}
+
+#launchBtn:disabled,
+#launchBtn:disabled:hover {
+    background-color: #A9A9A9;
+    border-color: #A9A9A9;
+    cursor: context-menu;
+}
+
+
+/* Media queries */
+@media screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
+    .introductionDiv {
+        margin-bottom: -5vw;
+    }
+
+    #introductionText {
+        font-size: 3.5vw;
+        width: 70vw;
+        height: 4.5vw;
+    }
+
+    .space {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .planet {
+        height: 80vw;
+        margin-left: 0;
+        margin-bottom: -1vw;
+    }
+
+    .rocket {
+        height: 35vw;
+        bottom: 36vw;
+        left: 37vw;
+    }
+
+    .control-panel {
+        border-radius: 1.5vw;
+        margin: auto;
+    }
+
+    .control-panel__inner {
+        border-radius: 2vw;
+        height: 70vw;
+        width: 70vw;
+    }
+
+    .options {
+        margin-top: 5vw;
+    }
+
+    .explanationText {
+        font-size: 3.5vw;
+        margin-top: 5vw;
+    }
+
+    .speed-container,
+    .trajectory-container {
+        font-size: 3.5vw;
+        padding-left: 9vw;
+    }
+
+    .speedCheckmark,
+    .trajectoryCheckmark {
+        height: 4vw;
+        width: 4vw;
+    }
+
+    #refreshBtn {
+        border-radius: 0.25vw;
+        width: 30vw;
+        height: 10vw;
+        font-size: 4vw;
+        margin-top: 2vw;
+        margin-bottom: -7vw;
+    }
+
+    #password {
+        margin-left: 7.5vw;
+        margin-top: 5vw;
+        height: 5vw;
+        width: 40vw;
+        font-size: 3.25vw;
+        border-radius: 1.25vw;
+    }
+
+    #okBtn {
+        margin-left: 1vw;
+        height: 6.25vw;
+        width: 9vw;
+        font-size: 3.25vw;
+        border-radius: 1.25vw;
+    }
+
+    #launchBtn {
+        margin-top: 5vw;
+        margin-left: 24vw;
+        border-radius: 1.25vw;
+        height: 8vw;
+        width: 22vw;
+        font-size: 3.5vw;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) and (orientation: portrait) {
+    .introductionDiv {
+        margin-bottom: 10vw;
+    }
+
+    #introductionText {
+        font-size: 2vw;
+        width: 40vw;
+        height: 2.5vw;
+    }
+
+    .space {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .planet {
+        height: 45vw;
+        margin-left: -80vw;
+        margin-bottom: -38vw;
+    }
+
+    .rocket {
+        height: 20vw;
+        bottom: 21vw;
+        left: -5vw;
+    }
+
+    .control-panel {
+        border-radius: 1vw;
+        margin: 5vw 5vw 5vw 5vw;
+    }
+
+    .control-panel__inner {
+        height: 55vw;
+        width: 55vw;
+    }
+
+    .options {
+        margin-top: 5vw;
+    }
+
+    .explanationText {
+        font-size: 2.5vw;
+        margin-top: 5vw;
+    }
+
+    .speed-container,
+    .trajectory-container {
+        font-size: 2.5vw;
+        padding-left: 5vw;
+    }
+
+    .speedCheckmark,
+    .trajectoryCheckmark {
+        height: 3vw;
+        width: 3vw;
+    }
+
+    #launchBtn {
+        margin-top: 3.5vw;
+        margin-left: 19vw;
+        border-radius: 1.5vw;
+        height: 6vw;
+        width: 18vw;
+        font-size: 2.5vw;
+    }
+
+    #refreshBtn {
+        border-radius: 0.5vw;
+        width: 25vw;
+        height: 8vw;
+        font-size: 3vw;
+        margin-bottom: 35vw;
+        margin-left: 28.5vw;
+    }
+
+    #password {
+        margin-left: 7.5vw;
+        margin-top: 5vw;
+        height: 3.5vw;
+        width: 30vw;
+        font-size: 2.25vw;
+        border-radius: 1vw;
+    }
+
+    #okBtn {
+        margin-left: 1vw;
+        height: 4.25vw;
+        width: 8vw;
+        font-size: 2.25vw;
+        border-radius: 1vw;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) and (orientation: landscape) {
+    #introductionText {
+        font-size: 1.75vw;
+        width: 35vw;
+        height: 2.15vw;
+        margin-bottom: -5vw;
+    }
+
+    .space {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin: auto;
+    }
+
+    .planet {
+        bottom: -8vw;
+    }
+
+    .rocket {
+        bottom: 10vw;
+    }
+
+    .control-panel {
+        margin: 5vw 5vw 5vw 17vw;
+    }
+
+    .control-panel__inner {
+        height: 37vw;
+        width: 37vw;
+    }
+
+    .options {
+        margin-top: 3vw;
+    }
+
+    .explanationText {
+        font-size: 1.5vw;
+    }
+
+    .speed-container,
+    .trajectory-container {
+        font-size: 1.5vw;
+        padding-left: 4vw;
+    }
+
+    .speedCheckmark,
+    .trajectoryCheckmark {
+        height: 2vw;
+        width: 2vw;
+    }
+
+    #password {
+        height: 2.5vw;
+        width: 19vw;
+        font-size: 1.5vw;
+        margin-left: 6vw;
+        border-radius: 0.75vw;
+    }
+
+    #okBtn {
+        margin-left: 1vw;
+        height: 3vw;
+        width: 4.5vw;
+        font-size: 1.5vw;
+        border-radius: 0.75vw;
+    }
+
+    #refreshBtn {
+        border-radius: 0.5vw;
+        width: 15vw;
+        height: 5vw;
+        font-size: 2vw;
+        position: absolute;
+    }
+
+    #launchBtn {
+        margin-top: 4vw;
+        margin-left: 14vw;
+        border-radius: 1.25vw;
+        height: 4vw;
+        width: 10vw;
+        font-size: 1.5vw;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+    #introductionText {
+        font-size: 1.5vw;
+        width: 30vw;
+        height: 2vw;
+    }
+
+    .space {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    .planet {
+        margin-bottom: -31vw;
+    }
+
+    .rocket {
+        bottom: -13vw;
+    }
+
+    .control-panel {
+        margin-left: 17vw;
+    }
+
+    .control-panel__inner {
+        height: 37vw;
+        width: 37vw;
+    }
+
+    .options {
+        margin-top: 3vw;
+    }
+
+    .explanationText {
+        font-size: 1.5vw;
+    }
+
+    .speed-container,
+    .trajectory-container {
+        font-size: 1.5vw;
+        padding-left: 4vw;
+    }
+
+    .speedCheckmark,
+    .trajectoryCheckmark {
+        height: 2vw;
+        width: 2vw;
+    }
+
+    #password {
+        height: 2.5vw;
+        width: 19vw;
+        font-size: 1.5vw;
+        margin-left: 6vw;
+    }
+
+    #okBtn {
+        margin-left: 1vw;
+        height: 2.75vw;
+        font-size: 1.5vw;
+    }
+
+    #refreshBtn {
+        border-radius: 0.5vw;
+        width: 15vw;
+        height: 5vw;
+        font-size: 2vw;
+        position: absolute;
+        margin-top: -10vw;
+    }
+
+    #launchBtn {
+        margin-left: 15vw;
+        margin-top: 3.5vw;
+    }
+}
