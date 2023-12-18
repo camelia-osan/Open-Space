@@ -14,7 +14,7 @@ The whole content is fitted in a big container which represents the space, that 
 
 - CSS
   
-Elements were styled using *Flexbox*. I used relative measurement units for better screen compatibility and different designs and cursors for interaction effects.
+The elements were styled using *Flexbox*. I used relative measurement units for better screen compatibility and different designs and cursors for interaction effects.
 
 
 To make the rocket move to a specific direction i used the *transform* property, *translate* and *rotate*. In order to set the speed levels, I used different values for *transition*.
