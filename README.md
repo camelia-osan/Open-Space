@@ -1,5 +1,5 @@
 # Open-Space
-HTML, CSS and JS web project
+Frontend Development, HTML, CSS and JavaScript
 
 
 ### Description
